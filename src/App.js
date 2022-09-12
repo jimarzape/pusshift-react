@@ -4,6 +4,7 @@ import "../src/assets/custom.css"
 
 const Loading = lazy(() => import('./components/Loading'))
 const Home = lazy(() => import('./pages/Home'))
+const Favorite = lazy(() => import('./pages/Favorite'))
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/favorite" element={<Favorite/>} />
         </Routes>
       </BrowserRouter>
     </Suspense>

@@ -1,10 +1,10 @@
 import { TextField, Button, Container, ButtonGroup } from '@mui/material';
-import Submission from "../components/Submission"
+import FavTopic from '../components/FavTopic';
 import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOfflineOutlined';
 import { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 
-const Home = () => {
+const Favorite = () => {
     const [topic, setTopic] = useState('webdev') 
     const [subs, setSub] = useState('webdev')
     const onChangeHandler = event => {
@@ -19,16 +19,10 @@ const Home = () => {
         <>
             <NavBar/>
             <Container className='mt-5'>
-                <div className='mb-2'>
-                <ButtonGroup variant="contained" aria-label=" button group">
-                    <TextField  type="text" variant="outlined" name="topic" value={topic} onChange={ onChangeHandler }/> 
-                    <Button variant="outlined" aria-label='outlined primary' startIcon={<DownloadForOfflineOutlinedIcon/>} onClick={ btnClick }>fetch</Button>
-                </ButtonGroup>
-                </div>
-                <Submission subreddit={subs} limit={15} />
+                <FavTopic limit={15} />
             </Container>
         </>
     )
 }
 
-export default Home
+export default Favorite
